@@ -29,7 +29,7 @@ console.log(image_url);
     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
     {/* Category */}
-    <div className="absolute top-4 left-4">
+    <div className="absolute top-4 left-4 ">
       <span className="badge badge-primary badge-lg">
         {category}
       </span>
