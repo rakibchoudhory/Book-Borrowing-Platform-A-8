@@ -1,5 +1,6 @@
 import Banner from "@/component/Bannar";
 import BrakingNews from "@/component/BrakingNews";
+import FeaturedBooks from "@/component/featuredBooks";
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div>
       <Banner/>
       <BrakingNews/>
+      <FeaturedBooks/>
     </div>
   );
 }
