@@ -12,7 +12,7 @@
   {
     "id": 2,
     "title": "Journey Beyond Stars",
-    "author": "Michael Brooks",
+    "author": "Michael Brooks", 
     "description": "An inspiring science-fiction story about humanity's first interstellar mission.",
     "category": "Story",
     "available_quantity": 5,
@@ -63,14 +63,13 @@
     "available_quantity": 4,
     "image_url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
   },
-  {
+    {
     "id": 8,
-    "title": "The Wonders of Space",
-    "author": "Dr. Alan Cooper",
-    "description": "Explore galaxies, black holes, and the mysteries of the universe.",
+    "title": "Brief Answers to the Big Questions",
+    "author": "Stephen Hawking",
     "category": "Science",
     "available_quantity": 12,
-    "image_url": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564"
+    "image_url": "https://covers.openlibrary.org/b/title/Brief%20Answers%20to%20the%20Big%20Questions-L.jpg"
   },
   {
     "id": 9,
@@ -83,12 +82,11 @@
   },
   {
     "id": 10,
-    "title": "The Human Brain",
-    "author": "James Wilson",
-    "description": "Discover how the brain works and shapes our daily lives.",
+    "title": "Cosmos",
+    "author": "Carl Sagan",
     "category": "Science",
-    "available_quantity": 8,
-    "image_url": "https://images.unsplash.com/photo-1507413245164-6160d8298b31"
+    "available_quantity": 22,
+    "image_url": "https://covers.openlibrary.org/b/title/Cosmos-L.jpg"
   },
   {
     "id": 11,

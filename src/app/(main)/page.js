@@ -1,6 +1,6 @@
 import Banner from "@/component/Bannar";
 import BrakingNews from "@/component/BrakingNews";
-import FeaturedBooks from "@/component/featuredBooks";
+import FeaturedBooks from "@/component/homePage/featuredBooks";
 
 
 export default function Home() {
