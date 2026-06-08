@@ -59,7 +59,7 @@ const BookDetailsPage = async ({ params }) => {
       </div>
 
       {/* Content */}
-      <div className="space-y-5 animate-slideRight">
+      <div className="space-y-4 animate-slideRight">
         <div className="flex gap-3">
           <span className="badge badge-success text-white animate-pulse">
             Available
@@ -104,7 +104,7 @@ const BookDetailsPage = async ({ params }) => {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-wrap gap-4 pt-4">
+        <div className="flex flex-wrap gap-4 pt-2">
           <BorrowButton />
 
           <button className="btn btn-outline btn-info hover:scale-105 transition-transform duration-300">
