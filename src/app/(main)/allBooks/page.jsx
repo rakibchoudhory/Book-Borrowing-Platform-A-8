@@ -1,34 +1,56 @@
 "use client";
+
 import "animate.css";
 import { useEffect, useState } from "react";
 import BookCard from "@/component/homePage/BookCard";
+import Loading from "./loading";
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
 
   useEffect(() => {
     const loadBooks = async () => {
-      const res = await fetch(
-        "https://online-book-borrowing-platfrom.vercel.app/data.json",
-      );
+      try {
+        const res = await fetch(
+          "https://online-book-borrowing-platfrom.vercel.app/data.json"
+        );
 
-      const data = await res.json();
+        if (!res.ok) {
+          throw new Error("Failed to fetch books");
+        }
 
-      setBooks(data.books);
+        const data = await res.json();
+        setBooks(data.books);
+      } catch (error) {
+        console.error("Error loading books:", error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     loadBooks();
   }, []);
 
   const filteredBooks = books.filter((book) => {
-    const matchTitle = book.title.toLowerCase().includes(search.toLowerCase());
+    const matchTitle = book.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
 
-    const matchCategory = category === "All" || book.category === category;
+    const matchCategory =
+      category === "All" || book.category === category;
 
     return matchTitle && matchCategory;
   });
+
+  // Loading State
+  if (loading) {
+    return (
+      <Loading/>
+    );
+  }
 
   return (
     <div className="w-11/12 mx-auto my-10">
@@ -47,18 +69,21 @@ const AllBooks = () => {
         />
       </div>
 
-      {/* Sidebar + Books */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 ">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Sidebar */}
-        <aside className="lg:col-span-1 animate__animated animate__fadeInLeft ">
+        <aside className="lg:col-span-1 animate__animated animate__fadeInLeft">
           <div className="bg-base-100 shadow-lg border rounded-2xl p-5 sticky top-20 py-10">
-            <h3 className="font-bold text-xl mb-10 border-b pb-2">Categories</h3>
+            <h3 className="font-bold text-xl mb-10 border-b pb-2">
+              Categories
+            </h3>
 
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => setCategory("All")}
                 className={`btn ${
-                  category === "All" ? "btn-primary" : "btn-outline"
+                  category === "All"
+                    ? "btn-primary"
+                    : "btn-outline"
                 }`}
               >
                 All Books
@@ -67,15 +92,20 @@ const AllBooks = () => {
               <button
                 onClick={() => setCategory("Story")}
                 className={`btn justify-start ${
-                  category === "Story" ? "btn-primary" : "btn-outline"
+                  category === "Story"
+                    ? "btn-primary"
+                    : "btn-outline"
                 }`}
               >
                 📖 Story
               </button>
+
               <button
                 onClick={() => setCategory("Tech")}
                 className={`btn justify-start ${
-                  category === "Tech" ? "btn-primary" : "btn-outline"
+                  category === "Tech"
+                    ? "btn-primary"
+                    : "btn-outline"
                 }`}
               >
                 💻 Tech
@@ -84,7 +114,9 @@ const AllBooks = () => {
               <button
                 onClick={() => setCategory("Science")}
                 className={`btn justify-start ${
-                  category === "Science" ? "btn-primary" : "btn-outline"
+                  category === "Science"
+                    ? "btn-primary"
+                    : "btn-outline"
                 }`}
               >
                 🔬 Science
@@ -102,8 +134,17 @@ const AllBooks = () => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-20">
-              <h2 className="text-2xl font-semibold">No books found 😢</h2>
+            <div className="flex flex-col items-center justify-center py-16">
+              <div className="text-6xl mb-4">📚</div>
+
+              <h2 className="text-2xl font-bold text-gray-700">
+                No Books Available
+              </h2>
+
+              <p className="text-gray-500 mt-2 text-center max-w-sm">
+                It looks like there are no books to display right now.
+                Try adjusting your search or check back later.
+              </p>
             </div>
           )}
         </div>

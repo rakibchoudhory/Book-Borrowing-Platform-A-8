@@ -15,7 +15,7 @@ console.log(image_url);
   return (
    <div className="group relative overflow-hidden rounded-2xl bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-500 border border-base-300">
   
-  {/* Book Cover */}
+ 
   <div className="relative h-80 overflow-hidden">
     <Image
       src={image_url}
@@ -25,7 +25,7 @@ console.log(image_url);
       
     />
 
-    {/* Dark Overlay */}
+    
     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
     {/* Category */}
@@ -35,14 +35,13 @@ console.log(image_url);
       </span>
     </div>
 
-    {/* Stock */}
+  
     <div className="absolute top-4 right-4">
       <span className="badge badge-success">
         {available_quantity} Copies
       </span>
     </div>
 
-    {/* Book Info */}
     <div className="absolute bottom-4 left-4 right-4 text-white">
       <h2 className="font-bold text-2xl line-clamp-2">
         {title}
@@ -54,7 +53,6 @@ console.log(image_url);
     </div>
   </div>
 
-  {/* Content */}
   <div className="p-5">
     <div className="flex items-center justify-between mb-4">
       <div>
@@ -77,10 +75,10 @@ console.log(image_url);
     </div>
 
     <Link
-      href={`/books/${id}`}
-      className="btn btn-primary w-full rounded-xl"
+      href={`/bookDetails/${id}`}
+      className="btn btn-primary w-full rounded-xl "
     >
-      <button className="btn-primary">📖 View Details</button>
+      <button className="btn-primary font-bold cursor-pointer">📖 View Details</button>
     </Link>
   </div>
 </div>

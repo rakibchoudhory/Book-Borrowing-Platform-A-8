@@ -34,7 +34,7 @@ const PopularCategories = () => {
         {categories.map((category) => (
           <div
             key={category.id}
-            className="card bg-base-100 shadow-xl hover:-translate-y-2 transition-all duration-300 animate__animated animate__zoomIn"
+            className="card bg-base-100 shadow-lg hover:-translate-y-2 transition-all duration-300 animate__animated animate__zoomIn"
           >
             <div className="card-body items-center text-center">
               <span className="text-6xl">{category.icon}</span>

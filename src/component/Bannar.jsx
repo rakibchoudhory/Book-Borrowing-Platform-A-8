@@ -13,6 +13,7 @@ const Banner = () => {
         fill
         priority
         className="object-cover"
+      
       />
 
       {/* Dark Overlay */}
@@ -30,8 +31,8 @@ const Banner = () => {
           Borrow your favorite books and start reading today.
         </p>
 
-        <Link href="/allBooks">
-          <button className="mt-8 px-8 py-3 bg-yellow-400 text-slate-900 font-semibold rounded-lg hover:bg-yellow-300 transition animate__animated animate__zoomIn animate__delay-2s">
+        <Link href="/allBooks" >
+          <button className="mt-8 px-8 py-3 bg-yellow-400 text-slate-900 font-semibold rounded-lg hover:bg-yellow-300 transition animate__animated animate__zoomIn animate__delay-2s cursor-pointer">
             Browse Now
           </button>
         </Link>
