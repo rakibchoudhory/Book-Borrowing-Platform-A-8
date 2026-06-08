@@ -11,7 +11,7 @@ const getBooksFetch = async () => {
 
 const FeaturedBooks = async () => {
   const books = await getBooksFetch();
-  console.log(books, "books");
+  // console.log(books, "books");
   return (
     <div className="w-11/12 mx-auto my-12">
       <div className="text-center mb-10">

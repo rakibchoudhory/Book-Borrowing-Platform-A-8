@@ -11,7 +11,7 @@ const BookCard = ({ book }) => {
     category,
     available_quantity,
   } = book;
-console.log(image_url);
+// console.log(image_url);
   return (
    <div className="group relative overflow-hidden rounded-2xl bg-base-100 shadow-lg hover:shadow-2xl transition-all duration-500 border border-base-300">
   
