@@ -12,7 +12,6 @@ const BookDetailsPage = async ({ params }) => {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-
   const user = session?.user;
 
   
@@ -22,10 +21,10 @@ const BookDetailsPage = async ({ params }) => {
 
   const { id } = await params;
   const paramsId = Number(id);
+  console.log(paramsId,"books");
 
- 
   const books = await getBooks();
-
+  console.log(books, "books");
  
   const filterBook = books.find(
     (book) => book.id === paramsId
@@ -36,7 +35,7 @@ const BookDetailsPage = async ({ params }) => {
   return  <h2>Not Found Book</h2>
   }
 
- 
+ console.log(filterBook,"filterbook");
 
  return (
   <section className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black py-16 animate-fadeIn">

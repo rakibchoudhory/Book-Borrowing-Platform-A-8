@@ -1,20 +1,26 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+
 
 
 
 const BorrowButton = () => {
+   const router = useRouter();
+
      const { data: session } = authClient.useSession();
       const user = session?.user;
-  const handleBorrow = () => {
-   {
-    user ? alert('Book Borrowed Successfully') : 
-    redirect("/signIn")
-   }
 
+  const handleBorrow = () => {
+     if (user) {
+      alert("Book Borrowed Successfully");
+    } else {
+      router.push("/signIn");
+    }
   };
+
+  
 
   return (
     <button className="btn" onClick={handleBorrow}>
