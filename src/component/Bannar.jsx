@@ -5,7 +5,7 @@ import "animate.css";
 
 const Banner = () => {
   return (
-    <section className="relative h-[75vh] overflow-hidden">
+    <section className="relative h-[76vh] overflow-hidden">
       {/* Background Image */}
       <Image
         src={BannarImg}
