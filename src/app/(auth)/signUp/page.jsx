@@ -81,7 +81,7 @@ const SignUpPage = () => {
               />
               <FieldError />
             </TextField>
-            \
+            
             <TextField
               isRequired
               name="email"
@@ -103,7 +103,7 @@ const SignUpPage = () => {
 
               <FieldError />
             </TextField>
-            \
+            
             <TextField
               isRequired
               name="photourl"
@@ -124,6 +124,7 @@ const SignUpPage = () => {
 
               <FieldError />
             </TextField>
+            
             <TextField
               className="relative"
               isRequired
@@ -174,6 +175,7 @@ const SignUpPage = () => {
 
               <FieldError />
             </TextField>
+
             <Button
               className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 rounded-xl hover:scale-[1.02] transition-all duration-300 shadow-lg"
               type="submit"
